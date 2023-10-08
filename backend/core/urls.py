@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 # Imports to configurate de statics files and media files 
 from django.conf import settings
@@ -8,6 +8,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Include the url paths 
+    path('', include('ecommerceapp.urls'))
 ]
 
 if settings.DEBUG:
